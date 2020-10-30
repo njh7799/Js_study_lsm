@@ -16,3 +16,9 @@ for (let i=0; i<=10; i++){
     }
     console.log(i)
 }
+function log(mes) {
+    console.log(mes)
+}
+log('Hello@')
+log(1234)
+
