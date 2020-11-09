@@ -1,0 +1,14 @@
+._body {
+  background-color: black;
+  color: white;
+}
+
+._img {
+  margin-bottom: 200px;
+  display: block;
+  margin: 0px auto;
+}
+
+h1 {
+  text-align: center;
+}

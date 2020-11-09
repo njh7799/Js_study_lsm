@@ -1,8 +1,8 @@
 'use strict';
 
-//JavaScript is sunchronous.
+//JavaScript is synchronous(동기적).
 //Excute the code block in order after hoisting
-//hoisting: var and function declatation move bottom to top
+//hoisting: var and function declaration move bottom to top
 
 console.log('1');
 setTimeout(()=> console.log('2'), 1000); //시간은 ms이므로 1000ms=1s setTimeout은 browser API
@@ -19,6 +19,13 @@ function printWithDelay (print, timeout) {
     setTimeout(print,timeout);
 }
 printWithDelay(()=>console.log('async callback'), 2000);
+
+// 콜백 체인의 문제점
+
+// 가독성이 안좋다
+// 비즈니스 로직을 이해하기 힘듦
+// 디버깅 할 때, 굉장히 어려움
+// 유지보수 안좋음
 
 //Callback Hell example
 class UserStorage {
@@ -46,17 +53,18 @@ class UserStorage {
     }
 }
 
-const UserStorage = new UserStorage();
-const id=prompt('enter your id');
-const password=prompt('enter your password');
-UserStorage.loginUser(
+
+const userStorage = new UserStorage();
+const id = prompt('enter your id');
+const password = prompt('enter your password');
+userStorage.loginUser(
     id, 
     password, 
     user=>{
         UserStorage.getRoles(
             user,
             userWithRole=>{
-                alert('Hello ${user.name}, you have a ${user.role} role')
+                alert(`Hello ${user.name}, you have a ${user.role} role`)
             },
             error=>{console.log(error);}
         );

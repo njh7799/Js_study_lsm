@@ -16,9 +16,11 @@ class Person {
     }
     //methods
     speak() {
-        console.log('${this.name}: hello!');
+        console.log(`${this.name}: hello!`);
     }
 }
+let sally=new Person('sally',12);
+console.log(sally)
 
 const ellie = new Person('ellie', 20);
 console.log(ellie.name);

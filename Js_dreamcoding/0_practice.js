@@ -1,0 +1,1 @@
+const ddd=prompt('id 입력')

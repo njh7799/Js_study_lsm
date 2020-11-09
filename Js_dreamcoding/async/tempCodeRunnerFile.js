@@ -1,1 +1,4 @@
-reject(new Error('no network'))
+function printImmediately(print) {
+    print();
+}
+printImmediately(()=>console.log('hello'));

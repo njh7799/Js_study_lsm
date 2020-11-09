@@ -1,12 +1,15 @@
 'use strict';
 
-//JavaScript is sunchronous.
+//JavaScript is synchronous(동기적).
 //Excute the code block in order after hoisting
 //hoisting: var and function declatation move bottom to top
+
 
 console.log('1');
 setTimeout(()=> console.log('2'), 1000); //시간은 ms이므로 1000ms=1s setTimeout은 browser API
 console.log('3');
+
+//javascript에서 callback 함수는 다른 함수의 매개변수로 함수를 전달하고, 어떠한 이벤트가 발생한 후 매개변수로 전달한 함수가 다시 호출되는 것을 의미
 
 //Synchronous callback
 function printImmediately(print) {
@@ -46,17 +49,17 @@ class UserStorage {
     }
 }
 
-const UserStorage = new UserStorage();
+const userStorage=new UserStorage();
 const id=prompt('enter your id');
 const password=prompt('enter your password');
-UserStorage.loginUser(
-    id, 
-    password, 
+userStorage.loginUser(
+    id,
+    password,
     user=>{
-        UserStorage.getRoles(
+        userStorage.getRoles(
             user,
             userWithRole=>{
-                alert('Hello ${user.name}, you have a ${user.role} role')
+                alert(`Hello ${userWithRole.name}, you have a ${user.role} role`)
             },
             error=>{console.log(error);}
         );
@@ -64,5 +67,4 @@ UserStorage.loginUser(
     error=>{
         console.log(error);
     }
-);
-//수정해야함. 정확한 학습 후 promise 이용해서 수정할 예정
+)

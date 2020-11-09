@@ -62,7 +62,7 @@ console.log(fruits);
 
 //combine two arrays
 const fruits2=['quince', 'coconut'];
-const newFruits = fruits.concat(fruits2);
+const newFruits = fruits.concat(fruits2); 
 console.log(newFruits);
 
 //5. Searching
