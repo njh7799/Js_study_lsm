@@ -1,9 +1,11 @@
-document.addEventListener('DOMContentLoaded',
-select_major()
-)
+document.addEventListener('DOMContentLoaded', function() {
+  start();
+} )
 
-function select_major(){
-let maj=document.getElementById('major');
-let major=maj.options[maj.selectedIndex].value;
-getElementById('selectedmajor').innerText=major
-}
+function start () {
+  const selectElement = document.querySelector('#major');
+    selectElement.addEventListener('change', (event) => {
+      const result = document.querySelector('.result');
+      result.textContent = `${event.target.value} 정보입니다.`;
+    });
+  }
