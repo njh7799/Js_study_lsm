@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>합격 예측 페이지</title>
+    <script src='predict.js'></script>
 </head>
 <body>
     합격 예측 페이지입니다.
+    학점을 입력해주세요.
+    <form>
+    학점 입력: <input type='number' id='gpa' min=0.0 max=4.50 step=0.01></input><br>
+    <input type='submit' onsubmit="main()"><br>
+    <div id='result'></div>
+</form>
 </body>
 </html>

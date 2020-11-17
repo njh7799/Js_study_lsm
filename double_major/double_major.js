@@ -1,11 +1,9 @@
 function main() {
-const target=document.getElementById('major_select');
+const target=document.getElementById('major_select'); 
 let major_text=target.options[target.selectedIndex].text;
 let major_value=target.options[target.selectedIndex].value;
-let major_link=''
-get_link(major_value);
 document.getElementById('result').textContent=major_text
-document.getElementById('link').innerHTML=`<a href=${major_link} target='_blank'>${major_text} 홈페이지</a>`
+document.getElementById('link_').innerHTML=`<a href=${get_link(major_value)}, target="_blank"> ${major_text} 홈페이지</a>`
 }
 
   //학점과 희망학과를 입력 받아 지원 안정성을 평가해주는 기능
@@ -13,20 +11,15 @@ document.getElementById('link').innerHTML=`<a href=${major_link} target='_blank'
 
 
 function get_link(mv){ //학과별 홍페이지 링크 지정
+  let major_link='';
   if (mv==='bme'){
-    major_link='http://bmeng.korea.ac.kr/bmeng/index.do'
-    
+    major_link="http://bmeng.korea.ac.kr/bmeng/index.do#none";
+  } else if (mv==='bsms'){
+      major_link='http://bsm.korea.ac.kr/bsm/index.do#none';
+    } else if (mv==='hes'){
+      major_link='https://hes.korea.ac.kr/hes/index.do#none';
+    } else { //hpm
+      major_link='https://hpm.korea.ac.kr/hpm/index.do#none';
     }
-    else if (mv==='bsms'){
-      major_link='http://bsm.korea.ac.kr/bsm/index.do'
-    
-    }
-    else if (mv==='hes'){
-      major_link='https://hes.korea.ac.kr/hes/index.do'
-    
-    }
-    else { //hpm
-      major_link='https://hpm.korea.ac.kr/hpm/index.do'
-    
-    }
+    return major_link;
   }
