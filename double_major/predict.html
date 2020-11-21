@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>합격 예측 페이지</title>
-    <script src='predict.js'></script>
+    <title>이중전공 합불 분석</title>
+    <link rel='stylesheet' href='predict.css'>
 </head>
 <body>
-    합격 예측 페이지입니다.
-    학점을 입력해주세요.
-    <form action='result.html' method='GET'>
-    학점 입력: <input type='number' id='gpa' min=0.0 max=4.50 step=0.01></input><br>
-    <input type='submit' onsubmit="main()"><br>
-    <div id='result'></div>
-</form>
+    <h3>보건환경융합과학부 이중전공 학점 데이터</h3>
+    <script src="C:\node_modules\chart.js\dist\Chart.js"></script> 
+    <script src='predict.js'></script>
+    <canvas id="mybarChart" width="500vh", height="300vw"></canvas> <!-- 합격자 평균, 불합격자 평균, 수평으로 지원자 점수 선 긋기 -->
+    <canvas id="myscatterChart" width="500vh", height="300vw"></canvas> <!-- 합격자와 불합격자 점수 선 그래프, 수평으로 지원자 점수 선 긋기 -->
+    <div class='notice'>#본 데이터는 최근 5년 동안의 것임.</div>
 </body>
 </html>
