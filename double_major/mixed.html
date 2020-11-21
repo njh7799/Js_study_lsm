@@ -6,26 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    <canvas id='ww' width='500' height="300"></canvas>
+    <canvas id='ww'></canvas>
     <script src="C:\node_modules\chart.js\dist\Chart.js"></script>
     <script>
         let ctx=document.getElementById('ww')
-        var mixedChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                datasets: [{
-                    label: 'Bar Dataset',
-                    data: [10, 20, 30, 40]
-                }, {
-                    label: 'Line Dataset',
-                    data: [50, 50, 50, 50],
-        
-                    // Changes this dataset to become a line
-                    type: 'line'
-                }],
-                labels: ['January', 'February', 'March', 'April']
-            },
-            options: options
-        });</script>
+        let mixedChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        datasets: [{
+            label: 'Bar Dataset',
+            data: [10, 20, 30, 40],
+            // this dataset is drawn below
+            order: 1
+        }, {
+            label: 'Line Dataset',
+            data: [10, 10, 10, 10],
+            type: 'line',
+            // this dataset is drawn on top
+            order: 2
+        }],
+        labels: ['January', 'February', 'March', 'April']
+    },
+    options: options
+});</script>
 </body>
-</html>
+</html> 
+<!-- 그래프가 안 그려진다. -->

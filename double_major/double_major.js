@@ -6,7 +6,6 @@ document.getElementById('result').textContent=major_text
 document.getElementById('link_').innerHTML=`<a href=${get_link(major_value)}, target="_blank"> ${major_text} 홈페이지</a>`
 }
 
-  //학점과 희망학과를 입력 받아 지원 안정성을 평가해주는 기능
 
 
 
