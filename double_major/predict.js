@@ -136,3 +136,7 @@ function say_last (score, average) {//평균과 지원자의 학점을 비교해
     }
     else {return '와 같음'}
 }
+
+// 예시
+const urlParams = new URLSearchParams(window.location.search);
+console.log(urlParams.get('app_cho0'))
